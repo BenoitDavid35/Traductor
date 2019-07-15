@@ -1,0 +1,20 @@
+.container-radio{
+  display: flex;
+  flex-direction : 'row';
+  flex-wrap : wrap;
+  justify-content: center;
+}
+
+.input-hidden{
+  border : 2px solid yellow;
+}
+
+.border-radio{
+  display: block;
+  border : 2px solid white;
+  width: 5rem;
+  height: 5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
