@@ -10,6 +10,7 @@ var bodyParser = require("body-parser");
 
 const async = require("async");
 
+//Partie qui gère les headers des requètes http
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(function (req, res, next) {
@@ -19,6 +20,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+//fichier qui permet d'accéder au JSON des codes de langages
 app.get('/languages', function (req, res) {
    fs.readFile( __dirname + "/data/" + "languages.json", 'utf8', function (err, data) {
       console.log( data );
@@ -26,12 +28,13 @@ app.get('/languages', function (req, res) {
    });
 })
 
+// partie qui renvoie le fichier vocal traduit
 app.post('/file', function (req, res) {
    console.log(`text :  ${req.body.text} ${req.body.lang}`);
    var translate = translation.vocalTranslator();
    let response = translation.vocalTranslator(req.body.lang,req.body.text);
    response.then(function(value) {
-   //  console.log('ICI PD'+value);
+   //  console.log('ICI Bonhomme'+value);
 
       //L'URL est à changer ici
       let rep = 'https://vps696635.ovh.net:8082/'+value[0];
@@ -43,6 +46,7 @@ app.post('/file', function (req, res) {
    });
 });
 
+//partie qui lance le serveur
 var server = app.listen(8081, function () {
    var host = server.address().address
    var port = server.address().port

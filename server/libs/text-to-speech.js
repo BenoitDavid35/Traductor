@@ -6,7 +6,7 @@ const async = require('async');
 const textToSpeech = require('@google-cloud/text-to-speech').v1beta1;
 
 // Creates a client
-const apikey = { projectId : 'singular-acumen-234307',	keyFilename : './key.json'};
+const apikey = { projectId : 'singular-acumen-234307',	keyFilename : './key.json'};   //key.json à été supprimé pour des raisons de sécurité sur GitHub
 const client = new textToSpeech.TextToSpeechClient (apikey);
 
 
@@ -24,23 +24,23 @@ function speak(text, language, voice, format)
     var audio = false;
     console.log(language);
     let lang = language;
-    
+
     if(language == 'pt') {
       lang = 'pt-BR-Standard-A';
     }else if(language == 'fr') {
-      lang = 'fr-FR-Standard-B';  
+      lang = 'fr-FR-Standard-B';
     }else if(language == 'en') {
-      lang = 'en-GB-Standard-A';   
+      lang = 'en-GB-Standard-A';
     }else if(language == 'de') {
-      lang = 'de-DE-Standard-A';   
+      lang = 'de-DE-Standard-A';
     }else if(language == 'it') {
-      lang = 'it-IT-Standard-A';   
+      lang = 'it-IT-Standard-A';
     }else if(language == 'es') {
-      lang = 'es-ES-Standard-A';   
+      lang = 'es-ES-Standard-A';
     }else if(language == 'ru') {
-      lang = 'ru-RU-Standard-A';   
+      lang = 'ru-RU-Standard-A';
     }else if(language == 'ja') {
-      lang = 'ja-JP-Standard-A';   
+      lang = 'ja-JP-Standard-A';
     }
     console.log('lang');
     console.log(language+""+lang);

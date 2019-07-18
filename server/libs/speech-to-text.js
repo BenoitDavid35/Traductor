@@ -4,7 +4,7 @@ const fs = require('fs');
 const async = require('async');
 
 // Creates a client
-const apikey = { projectId : 'singular-acumen-234307',	keyFilename : './key.json'};
+const apikey = { projectId : 'singular-acumen-234307',	keyFilename : './key.json'}; //key.json à été supprimé pour des raisons de sécurité sur GitHub
 const client = new speech.SpeechClient (apikey);
 
 /**

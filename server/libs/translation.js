@@ -13,7 +13,6 @@ const client = new googleTranslate.Translate (apikey);
 function translate (text, to)
 {
     to   = to || 'en';
-
     return new Promise((resolve) =>
 	{
         if(text && text.length)
@@ -53,7 +52,6 @@ function detectLanguage (text)
  */
 exports.translate = translate;
 exports.detectLanguage = detectLanguage;
-
 
 // /**
 //  * test function

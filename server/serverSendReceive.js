@@ -5,6 +5,7 @@ path = require("path"),
 url = require("url"),
 fs = require("fs");
 
+//fonction de retour d'erreur
 function sendError(errCode, errString, response)
 {
   response.writeHead(errCode, {"Content-Type": "text/plain"});
@@ -13,6 +14,7 @@ function sendError(errCode, errString, response)
   return;
 }
 
+//fonction qui va envoyer un fichier
 function sendFile(err, file, response)
 {
   if(err) return sendError(500, err, response);
@@ -21,6 +23,7 @@ function sendFile(err, file, response)
   response.end();
 }
 
+//fonction qui va permettre la réception d'un fichier
 function getFile(exists, response, localpath)
 {
   if(!exists) return sendError(404, '404 Not Found', response);
@@ -28,6 +31,7 @@ function getFile(exists, response, localpath)
    function(err, file){ sendFile(err, file, response);});
 }
 
+//fonction qui va permettre de récupérer l'URL de destination du fichier et son chemin local afin de revoyer le bon fichier au bon client
 function getFilename(request, response)
 {
   console.log(request.url+response);

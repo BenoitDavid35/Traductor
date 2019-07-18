@@ -4,6 +4,7 @@ const trans = require("./libs/translation.js");
 
 const async = require("async");
 
+//renvoie une chaine aléatoire pour obtenir un nom unique pour chaque fichier
 function chaineAleatoire(nbcar)
 {
 	var ListeCar = new Array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9");
@@ -15,6 +16,7 @@ function chaineAleatoire(nbcar)
 	return Chaine;
 }
 
+//fonction centrale qui permet de gérer la traduction du fichier vocal en input et de le renvoyer au destinataire
 async function vocalTranslator(langage, texte){
     /*texte = await asr.transcribeShortFile('./audio/tts.wav');
     texte = JSON.stringify(texte);
