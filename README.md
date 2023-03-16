@@ -14,13 +14,7 @@ expect 'google-cloud/speech' & 'fs' & 'util' & 'async'
 
 ### To upgrade
 
-Record button - Appears code got missing but exists in the script_new.js file      15/07/2019
+Record button - Appears code got missing but exists in the script_new.js file
+Events not locked to enter button to send message
 
 Doc Here: https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API
-
-Make it a full working maketable application ?          15/07/2019
-
-### Things i deliberately REMOVED
-
-The license API key for google - Security reasons
-package-lock.json - Security reasons
